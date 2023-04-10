@@ -3,6 +3,7 @@ const cors = require("cors");
 const errorHandelar = require("./middlewares/errorHandelar");
 const companyRoute = require("./routes/company.route");
 const userRoute = require("./routes/user.routes");
+const supplierRouter = require("./routes/supplier.route");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/companys", companyRoute);
 app.use("/api/v1/users", userRoute);
+app.use("/api/v1/suppliers", supplierRouter);
 
 app.all("*", (req, res) => {
   res.status(400).json({ status: "fail", massage: "no route found" });
