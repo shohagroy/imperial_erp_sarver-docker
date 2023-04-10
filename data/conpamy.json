@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "643437fdf35540603d6293bc",
+    "name": "imperial sanitary house",
+    "address": "senpara road, rangpur",
+    "emergencyContact": "01760567555",
+    "email": "info@imperialsanitaryhouse.com",
+    "logo": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPB_Umxs1iy47dZseGb3u12Dy3foy37U75n6OWgUqZKHLjC2N4sSh2uGwq490UgGPGcx4&usqp=CAU"
+    ],
+    "status": "active",
+    "createdAt": "2023-04-10T16:23:25.142Z",
+    "updatedAt": "2023-04-10T16:23:25.142Z",
+    "__v": 0
+  },
+  {
+    "_id": "643438a0524d7d026a3a38ac",
+    "name": "imperial sanitary house - 2",
+    "address": "senpara road, rangpur",
+    "emergencyContact": "01760567555",
+    "email": "info@newimperialsanitaryhouse.com",
+    "logo": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPB_Umxs1iy47dZseGb3u12Dy3foy37U75n6OWgUqZKHLjC2N4sSh2uGwq490UgGPGcx4&usqp=CAU"
+    ],
+    "status": "active",
+    "createdAt": "2023-04-10T16:26:08.428Z",
+    "updatedAt": "2023-04-10T16:26:08.428Z",
+    "__v": 0
+  },
+  {
+    "_id": "643438ca98437eac8d097173",
+    "name": "rajrup tiles view",
+    "address": "senpara road, rangpur",
+    "emergencyContact": "01760567555",
+    "email": "info@rajrup.com",
+    "logo": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPB_Umxs1iy47dZseGb3u12Dy3foy37U75n6OWgUqZKHLjC2N4sSh2uGwq490UgGPGcx4&usqp=CAU"
+    ],
+    "status": "active",
+    "createdAt": "2023-04-10T16:26:50.305Z",
+    "updatedAt": "2023-04-10T16:26:50.305Z",
+    "__v": 0
+  },
+  {
+    "_id": "64343902aa508168852cfb5d",
+    "name": "moni concrete and irom",
+    "address": "senpara road, rangpur",
+    "emergencyContact": "01760567555",
+    "email": "info@moniconcrete.com",
+    "logo": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPB_Umxs1iy47dZseGb3u12Dy3foy37U75n6OWgUqZKHLjC2N4sSh2uGwq490UgGPGcx4&usqp=CAU"
+    ],
+    "status": "active",
+    "createdAt": "2023-04-10T16:27:46.471Z",
+    "updatedAt": "2023-04-10T16:27:46.471Z",
+    "__v": 0
+  }
+]
