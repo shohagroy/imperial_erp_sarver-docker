@@ -1,0 +1,61 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "_id": "643477e9bbcaf113751ad954",
+      "name": "apu roy",
+      "address": "rangpur",
+      "contact": "01760567555",
+      "email": "apu@gmail.com",
+      "whatapp": "01760567",
+      "type": "general",
+      "currentAmount": 0,
+      "status": "active",
+      "createdAt": "2023-04-10T20:56:09.752Z",
+      "updatedAt": "2023-04-10T20:56:09.752Z",
+      "__v": 0
+    },
+    {
+      "_id": "643477ffbbcaf113751ad956",
+      "name": "shadib roy",
+      "address": "rangpur",
+      "contact": "01760567555",
+      "email": "shadin@gmail.com",
+      "whatapp": "01760567555",
+      "type": "general",
+      "currentAmount": 0,
+      "status": "active",
+      "createdAt": "2023-04-10T20:56:31.583Z",
+      "updatedAt": "2023-04-10T20:56:31.583Z",
+      "__v": 0
+    },
+    {
+      "_id": "64347820bbcaf113751ad95a",
+      "name": "amit roy",
+      "address": "rangpur",
+      "contact": "01760567555",
+      "email": "amit@gmail.com",
+      "whatapp": "01760567555",
+      "type": "general",
+      "currentAmount": 0,
+      "status": "active",
+      "createdAt": "2023-04-10T20:57:04.933Z",
+      "updatedAt": "2023-04-10T20:57:04.933Z",
+      "__v": 0
+    },
+    {
+      "_id": "64347843bbcaf113751ad95d",
+      "name": "bikash roy",
+      "address": "rangpur",
+      "contact": "01760567555",
+      "email": "bikash@gmail.com",
+      "whatapp": "01760567555",
+      "type": "wholesale",
+      "currentAmount": 0,
+      "status": "active",
+      "createdAt": "2023-04-10T20:57:39.261Z",
+      "updatedAt": "2023-04-10T20:57:39.261Z",
+      "__v": 0
+    }
+  ]
+}

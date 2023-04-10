@@ -28,6 +28,7 @@ exports.getCompany = async (req, res, next) => {
     const { id } = req.params;
 
     const company = await getCompanyService(id);
+    await company.save({ validateBeforeSave: false });
 
     if (company._id) {
       return res.status(200).json({

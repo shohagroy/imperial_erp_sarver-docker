@@ -44,6 +44,7 @@ exports.getUser = async (req, res, next) => {
 exports.postUser = async (req, res, next) => {
   try {
     const user = await services.postUserService(req.body);
+    await user.save({ validateBeforeSave: false });
 
     if (user._id) {
       const company = await getCompanyService("643438a0524d7d026a3a38ac");

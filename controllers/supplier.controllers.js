@@ -25,7 +25,7 @@ exports.getSupplier = async (req, res, next) => {
 
     const supplier = await services.getSupplierService(id);
 
-    if (user._id) {
+    if (supplier._id) {
       return res.status(200).json({
         status: "success",
         data: supplier,
@@ -43,6 +43,7 @@ exports.getSupplier = async (req, res, next) => {
 exports.postSupplier = async (req, res, next) => {
   try {
     const supplier = await services.postSupplierService(req.body);
+    await supplier.save({ validateBeforeSave: false });
 
     if (supplier._id) {
       res.status(200).json({
