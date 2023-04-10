@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "643467e3b56a461a109963b0",
+    "fullName": "shohag roy",
+    "role": "admin",
+    "address": "mahigonj, rangpur",
+    "contact": "01760567555",
+    "email": "pkshohag240@gmail.com",
+    "status": "active",
+    "createdAt": "2023-04-10T19:47:47.658Z",
+    "updatedAt": "2023-04-10T19:47:47.658Z",
+    "__v": 0
+  },
+  {
+    "_id": "6434690ca9e67d9052b83a6a",
+    "fullName": "ripon sarker",
+    "role": "admin",
+    "address": "mahigonj, rangpur",
+    "contact": "01760567555",
+    "email": "ripon@gmail.com",
+    "status": "active",
+    "createdAt": "2023-04-10T19:52:44.062Z",
+    "updatedAt": "2023-04-10T19:52:44.062Z",
+    "__v": 0
+  },
+  {
+    "_id": "643469935952e2676821c5c8",
+    "fullName": "subroto sarker",
+    "role": "admin",
+    "address": "mahigonj, rangpur",
+    "contact": "01760567555",
+    "email": "subroto@gmail.com",
+    "status": "active",
+    "createdAt": "2023-04-10T19:54:59.226Z",
+    "updatedAt": "2023-04-10T19:54:59.226Z",
+    "__v": 0
+  },
+  {
+    "_id": "64346a38823f4a1f8acf9631",
+    "fullName": "bipul sarker",
+    "role": "admin",
+    "address": "mahigonj, rangpur",
+    "contact": "01760567555",
+    "email": "bipul@gmail.com",
+    "status": "active",
+    "createdAt": "2023-04-10T19:57:44.251Z",
+    "updatedAt": "2023-04-10T19:57:44.251Z",
+    "__v": 0
+  }
+]
