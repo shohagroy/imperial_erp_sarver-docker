@@ -48,6 +48,7 @@ exports.postCustomer = async (req, res, next) => {
     if (customer._id) {
       res.status(200).json({
         status: "success",
+        massage: "new customer create successfully",
         data: customer,
       });
     }

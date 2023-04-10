@@ -1,4 +1,3 @@
-const { getCompanyService } = require("../services/company.services");
 const services = require("../services/user.services");
 
 exports.getUsers = async (req, res, next) => {
@@ -45,16 +44,22 @@ exports.postUser = async (req, res, next) => {
   try {
     const user = await services.postUserService(req.body);
     await user.save({ validateBeforeSave: false });
-
-    if (user._id) {
-      const company = await getCompanyService("643438a0524d7d026a3a38ac");
-      res.status(200).json({
-        status: "success",
-        data: company,
-      });
-    }
+    res.status(200).json({
+      status: "success",
+      massage: "new staff create successfully",
+      data: user,
+    });
   } catch (error) {
-    console.log(error);
+    next(error);
+  }
+};
+
+exports.loginUser = async (req, res, next) => {
+  try {
+    const loginResponse = await services.loginService(req.body);
+
+    res.status(200).json(loginResponse);
+  } catch (error) {
     next(error);
   }
 };

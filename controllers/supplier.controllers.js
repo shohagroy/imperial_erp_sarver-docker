@@ -48,6 +48,7 @@ exports.postSupplier = async (req, res, next) => {
     if (supplier._id) {
       res.status(200).json({
         status: "success",
+        massage: "new supplier create successfully",
         data: supplier,
       });
     }

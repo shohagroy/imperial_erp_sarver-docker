@@ -50,7 +50,7 @@ exports.postCompany = async (req, res, next) => {
     const companys = await postCompanyService(req.body);
     res.status(200).json({
       status: "success",
-      data: companys,
+      massage: "new company create successfully",
     });
   } catch (error) {
     next(error);
