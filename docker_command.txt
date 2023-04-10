@@ -1,0 +1,8 @@
+
+
+docker build app --> docker build -t (filename) (path name) 
+                     ex: docker build -t imperial_erp .
+
+docker images find --> docker images or docker image ls
+
+docker run --> docker run image name ex: docker run imperial_erp
