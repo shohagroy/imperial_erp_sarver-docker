@@ -1,0 +1,19 @@
+{
+  "code": "abc-2021a",
+  "name": "abc wall tiles (8' x 12') 2021 - a",
+  "description": "",
+  "category": {
+    "name": "tiles",
+    "id": "6435417a2cac3a9418612d01"
+  },
+  "unit": "pcs",
+  "packSize": 25,
+  "unitSize": 1.5,
+  "price": 28,
+  "imageURLs": "",
+  "suppliedBy": {
+    "name": "ab ceramic limited",
+    "id": "6434723f29190bf85c848b39"
+  },
+  "status": "active"
+}

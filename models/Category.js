@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Schema.Types;
 
 // schema design
 const categorySchema = mongoose.Schema(
@@ -10,6 +11,12 @@ const categorySchema = mongoose.Schema(
       unique: [true, "category name must be unique"],
       lowercase: true,
     },
+    products: [
+      {
+        type: ObjectId,
+        ref: "Product",
+      },
+    ],
   },
   {
     timestamps: true,

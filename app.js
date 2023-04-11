@@ -9,6 +9,7 @@ const customerRouter = require("./routes/customer.route");
 const categoryRouter = require("./routes/category.route");
 const unitRouter = require("./routes/unit.route");
 const unitSizesRouter = require("./routes/unitSize.route");
+const productRouter = require("./routes/product.route");
 
 const verifyToken = require("./middlewares/verifyToken");
 const authorization = require("./middlewares/authorization");
@@ -57,6 +58,14 @@ app.use(
   verifyToken,
   authorization("admin", "seller"),
   unitSizesRouter
+);
+
+// products routes
+app.use(
+  "/api/v1/products",
+  verifyToken,
+  authorization("admin", "seller"),
+  productRouter
 );
 
 app.all("*", (req, res) => {

@@ -1,58 +1,65 @@
-[
-  {
-    "_id": "6434723f29190bf85c848b39",
-    "name": "ab ceramic limited",
-    "address": "bogura, bangladesh",
-    "contact": "01760567555",
-    "email": "abc@gmail.com",
-    "whatapp": "01760567",
-    "type": "company",
-    "currentAmount": 0,
-    "status": "active",
-    "createdAt": "2023-04-10T20:31:59.870Z",
-    "updatedAt": "2023-04-10T20:31:59.870Z",
-    "__v": 0
-  },
-  {
-    "_id": "6434729d9d3164d3f3852f78",
-    "name": "bcl ceramic limited",
-    "address": "bogura, bangladesh",
-    "contact": "01760567555",
-    "email": "bcl@gmail.com",
-    "whatapp": "01760567555",
-    "type": "company",
-    "currentAmount": 0,
-    "status": "active",
-    "createdAt": "2023-04-10T20:33:33.301Z",
-    "updatedAt": "2023-04-10T20:33:33.301Z",
-    "__v": 0
-  },
-  {
-    "_id": "643472aa9d3164d3f3852f7a",
-    "name": "tusher ceramic limited",
-    "address": "bogura, bangladesh",
-    "contact": "01760567555",
-    "email": "tusher@gmail.com",
-    "whatapp": "01760567555",
-    "type": "company",
-    "currentAmount": 0,
-    "status": "active",
-    "createdAt": "2023-04-10T20:33:46.720Z",
-    "updatedAt": "2023-04-10T20:33:46.720Z",
-    "__v": 0
-  },
-  {
-    "_id": "643472be9d3164d3f3852f7c",
-    "name": "alexender ceramic limited",
-    "address": "bogura, bangladesh",
-    "contact": "01760567555",
-    "email": "alexender@gmail.com",
-    "whatapp": "01760567555",
-    "type": "company",
-    "currentAmount": 0,
-    "status": "active",
-    "createdAt": "2023-04-10T20:34:06.459Z",
-    "updatedAt": "2023-04-10T20:34:06.459Z",
-    "__v": 0
-  }
-]
+{
+  "status": "success",
+  "data": [
+    {
+      "products": [],
+      "_id": "6434729d9d3164d3f3852f78",
+      "name": "bcl ceramic limited",
+      "address": "bogura, bangladesh",
+      "contact": "01760567555",
+      "email": "bcl@gmail.com",
+      "whatapp": "01760567555",
+      "type": "company",
+      "currentAmount": 0,
+      "status": "active",
+      "createdAt": "2023-04-10T20:33:33.301Z",
+      "updatedAt": "2023-04-10T20:33:33.301Z",
+      "__v": 0
+    },
+    {
+      "products": [],
+      "_id": "643472aa9d3164d3f3852f7a",
+      "name": "tusher ceramic limited",
+      "address": "bogura, bangladesh",
+      "contact": "01760567555",
+      "email": "tusher@gmail.com",
+      "whatapp": "01760567555",
+      "type": "company",
+      "currentAmount": 0,
+      "status": "active",
+      "createdAt": "2023-04-10T20:33:46.720Z",
+      "updatedAt": "2023-04-10T20:33:46.720Z",
+      "__v": 0
+    },
+    {
+      "products": [],
+      "_id": "643472be9d3164d3f3852f7c",
+      "name": "alexender ceramic limited",
+      "address": "bogura, bangladesh",
+      "contact": "01760567555",
+      "email": "alexender@gmail.com",
+      "whatapp": "01760567555",
+      "type": "company",
+      "currentAmount": 0,
+      "status": "active",
+      "createdAt": "2023-04-10T20:34:06.459Z",
+      "updatedAt": "2023-04-10T20:34:06.459Z",
+      "__v": 0
+    },
+    {
+      "_id": "643576145f0c53810343bdb8",
+      "name": "ab  ceramic limited",
+      "address": "bogura, bangladesh",
+      "contact": "01760567555",
+      "email": "abc@gmail.com",
+      "whatapp": "01760567555",
+      "type": "company",
+      "products": [],
+      "currentAmount": 0,
+      "status": "active",
+      "createdAt": "2023-04-11T15:00:36.412Z",
+      "updatedAt": "2023-04-11T15:00:36.412Z",
+      "__v": 0
+    }
+  ]
+}

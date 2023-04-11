@@ -2,17 +2,27 @@
   "status": "success",
   "data": [
     {
-      "_id": "6435417a2cac3a9418612d01",
-      "name": "tiles",
-      "createdAt": "2023-04-11T11:16:10.281Z",
-      "updatedAt": "2023-04-11T11:16:10.281Z",
-      "__v": 0
-    },
-    {
+      "products": [],
       "_id": "6435419fcdca6da0a1d12ae8",
       "name": "ceramic",
       "createdAt": "2023-04-11T11:16:47.755Z",
       "updatedAt": "2023-04-11T11:16:47.755Z",
+      "__v": 0
+    },
+    {
+      "products": [],
+      "_id": "64354211c2a516197c9c5a61",
+      "name": "pipe",
+      "createdAt": "2023-04-11T11:18:41.589Z",
+      "updatedAt": "2023-04-11T11:18:41.589Z",
+      "__v": 0
+    },
+    {
+      "_id": "643575dc5f0c53810343bdb2",
+      "name": "tiles",
+      "products": [],
+      "createdAt": "2023-04-11T14:59:40.577Z",
+      "updatedAt": "2023-04-11T14:59:40.577Z",
       "__v": 0
     }
   ]

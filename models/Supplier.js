@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const { ObjectId } = mongoose.Schema.Types;
 
 // schema design
 const supplierSchema = mongoose.Schema(
@@ -49,6 +50,14 @@ const supplierSchema = mongoose.Schema(
       enum: ["local", "company", "international"],
       default: "company",
     },
+
+    products: [
+      {
+        type: ObjectId,
+        ref: "Product",
+      },
+    ],
+
     currentAmount: {
       type: Number,
       default: 0,
@@ -63,19 +72,6 @@ const supplierSchema = mongoose.Schema(
     timestamps: true,
   }
 );
-
-// supplierSchema.pre("save", function (next) {
-//   const password = this.password;
-//   const hashedPassword = bcrypt.hashSync(password);
-
-//   this.password = hashedPassword;
-//   next();
-// });
-
-// supplierSchema.methods.comparePassword = function (password, hash) {
-//   const isPasswordValid = bcrypt.compareSync(password, hash);
-//   return isPasswordValid;
-// };
 
 const Supplier = mongoose.model("Supplier", supplierSchema);
 
