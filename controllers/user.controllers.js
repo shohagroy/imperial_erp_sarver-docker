@@ -63,3 +63,16 @@ exports.loginUser = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.getMe = async (req, res) => {
+  try {
+    const getMeResponse = await services.getMeService(req.user);
+
+    res.status(200).json(getMeResponse);
+  } catch (error) {
+    res.status(500).json({
+      status: "fail",
+      error,
+    });
+  }
+};

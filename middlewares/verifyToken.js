@@ -10,6 +10,9 @@ const { promisify } = require("util");
 module.exports = async (req, res, next) => {
   try {
     const token = req.headers?.authorization?.split(" ")?.[1];
+    const companyId = req.headers.company;
+
+    console.log(companyId);
 
     if (!token) {
       return res.status(401).json({
@@ -26,6 +29,8 @@ module.exports = async (req, res, next) => {
     // const user = User.findOne({ email: decoded.email });
 
     req.user = decoded;
+
+    console.log(decoded);
 
     next();
   } catch (error) {

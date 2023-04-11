@@ -45,7 +45,7 @@ exports.loginService = async (loginInfo) => {
     };
   }
 
-  const token = generateToken(user);
+  const token = generateToken(user, companyId);
   const company = await Company.findById(companyId);
   const { password: pwd, ...others } = user.toObject();
 
@@ -53,6 +53,35 @@ exports.loginService = async (loginInfo) => {
     status: "success",
     user: others,
     token,
+    company,
+  };
+};
+
+exports.getMeService = async (userInfo) => {
+  const { id, companyId } = userInfo;
+
+  const user = await User.findById(id);
+
+  if (!user) {
+    return {
+      status: "fail",
+      error: "No user found. please contact admin",
+    };
+  }
+
+  if (user.status !== "active") {
+    return {
+      status: "fail",
+      error: "your account is not active yet.",
+    };
+  }
+
+  const company = await Company.findById(companyId);
+  const { password: pwd, ...others } = user.toObject();
+
+  return {
+    status: "success",
+    user: others,
     company,
   };
 };
