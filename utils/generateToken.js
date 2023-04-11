@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const crypto = require("crypto");
 
 exports.generateToken = (userInfo) => {
   const payload = {
@@ -8,7 +7,7 @@ exports.generateToken = (userInfo) => {
     role: userInfo.role,
   };
 
-  const token = jwt.sign(payload, crypto.randomBytes(64).toString("hex"), {
+  const token = jwt.sign(payload, process.env.SECTECT_TOKEN_KEY, {
     expiresIn: "4H",
   });
   return token;
