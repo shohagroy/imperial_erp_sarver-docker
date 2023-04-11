@@ -7,6 +7,7 @@ const supplierRouter = require("./routes/supplier.route");
 const customerRouter = require("./routes/customer.route");
 
 const verifyToken = require("./middlewares/verifyToken");
+const authorization = require("./middlewares/authorization");
 
 const app = express();
 
@@ -20,7 +21,14 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/companys", companyRoute);
 app.use("/api/v1/users", userRoute);
-app.use("/api/v1/suppliers", verifyToken, supplierRouter);
+
+app.use(
+  "/api/v1/suppliers",
+  verifyToken,
+  authorization("admin", "seller"),
+  supplierRouter
+);
+
 app.use("/api/v1/customers", customerRouter);
 
 app.all("*", (req, res) => {
