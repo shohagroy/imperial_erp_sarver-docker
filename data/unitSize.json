@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "_id": "6435466dbadb262ba676689b",
+      "name": "8' x 12' tiles",
+      "value": 1.5,
+      "createdAt": "2023-04-11T11:37:17.429Z",
+      "updatedAt": "2023-04-11T11:37:17.429Z",
+      "__v": 0
+    },
+    {
+      "_id": "64354678badb262ba676689d",
+      "name": "12' x 12' tiles",
+      "value": 1,
+      "createdAt": "2023-04-11T11:37:28.412Z",
+      "updatedAt": "2023-04-11T11:37:28.412Z",
+      "__v": 0
+    }
+  ]
+}

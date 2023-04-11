@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "_id": "6435417a2cac3a9418612d01",
+      "name": "tiles",
+      "createdAt": "2023-04-11T11:16:10.281Z",
+      "updatedAt": "2023-04-11T11:16:10.281Z",
+      "__v": 0
+    },
+    {
+      "_id": "6435419fcdca6da0a1d12ae8",
+      "name": "ceramic",
+      "createdAt": "2023-04-11T11:16:47.755Z",
+      "updatedAt": "2023-04-11T11:16:47.755Z",
+      "__v": 0
+    }
+  ]
+}
