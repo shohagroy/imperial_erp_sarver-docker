@@ -61,6 +61,10 @@ const productSchema = mongoose.Schema(
       default: 0,
       min: 0,
     },
+    stock: {
+      type: ObjectId,
+      ref: "Stock",
+    },
 
     imageURLs: String,
     suppliedBy: {
@@ -72,6 +76,7 @@ const productSchema = mongoose.Schema(
       id: {
         type: ObjectId,
         ref: "Supplier",
+        required: [true, "Please provide a stock id"],
       },
     },
     status: {

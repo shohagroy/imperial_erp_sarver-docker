@@ -4,23 +4,24 @@ const Stock = require("../models/Stock");
 const Supplier = require("../models/Supplier");
 
 exports.getProductsService = async () => {
-  const response = await Product.find({});
+  const response = await Product.find({}).select("code name _id");
   return response;
 };
 
 exports.getProductService = async (_id) => {
-  const response = await Product.findById(_id);
+  // const query = code.id === _id;
+  const response = await Product.findById(_id).populate("stock");
+
   return response;
 };
 
 exports.postProductService = async (productData) => {
-  const response = await Product.create(productData);
-
-  const { _id: productId, code, name, category, suppliedBy } = response;
+  const { code, name, category, suppliedBy } = productData;
 
   // stock create data
   const productStock = {
-    product: { code, name, id: productId },
+    code,
+    name,
     status: "out-of-stock",
     quantity: 0,
     available: 0,
@@ -28,6 +29,9 @@ exports.postProductService = async (productData) => {
 
   // create stock
   const stock = await Stock.create(productStock);
+  const response = await Product.create({ ...productData, stock: stock._id });
+
+  const { _id: productId } = response;
 
   // // update category product
   await Category.updateOne(

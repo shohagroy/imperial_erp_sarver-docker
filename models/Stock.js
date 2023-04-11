@@ -3,24 +3,17 @@ const { ObjectId } = mongoose.Schema.Types;
 // schema design
 
 const stockSchema = mongoose.Schema({
-  product: {
-    code: {
-      type: String,
-      trim: true,
-      required: [true, "Please provide a product code"],
-      lowercase: true,
-    },
-    name: {
-      type: String,
-      trim: true,
-      required: [true, "Please provide a product name"],
-      lowercase: true,
-    },
-    id: {
-      type: ObjectId,
-      required: true,
-      ref: "Product",
-    },
+  code: {
+    type: String,
+    trim: true,
+    required: [true, "Please provide a product code"],
+    lowercase: true,
+  },
+  name: {
+    type: String,
+    trim: true,
+    required: [true, "Please provide a product name"],
+    lowercase: true,
   },
   quantity: {
     type: Number,
