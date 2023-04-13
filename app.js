@@ -10,21 +10,27 @@ const categoryRouter = require("./routes/category.route");
 const unitRouter = require("./routes/unit.route");
 const unitSizesRouter = require("./routes/unitSize.route");
 const productRouter = require("./routes/product.route");
+const purchasesRouter = require("./routes/purchases.route");
 
 const verifyToken = require("./middlewares/verifyToken");
 const authorization = require("./middlewares/authorization");
+const manageDatabase = require("./middlewares/manageDatabase");
+
+const cookiePurser = require("cookie-parser");
 
 const app = express();
 
 // middleware
 app.use(cors());
 app.use(express.json());
+app.use(cookiePurser());
 
 app.get("/", (req, res) => {
   res.send("erp server is running...");
 });
 
 app.use("/api/v1/companys", companyRoute);
+
 app.use("/api/v1/users", userRoute);
 
 app.use(
@@ -40,6 +46,7 @@ app.use("/api/v1/customers", customerRouter);
 app.use(
   "/api/v1/categorys",
   verifyToken,
+  manageDatabase,
   authorization("admin", "seller"),
   categoryRouter
 );
@@ -64,8 +71,18 @@ app.use(
 app.use(
   "/api/v1/products",
   verifyToken,
+  manageDatabase,
   authorization("admin", "seller"),
   productRouter
+);
+
+// supplier invoice
+app.use(
+  "/api/v1/purchases",
+  verifyToken,
+  manageDatabase,
+  authorization("admin", "seller"),
+  purchasesRouter
 );
 
 app.all("*", (req, res) => {

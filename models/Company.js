@@ -52,6 +52,13 @@ const companySchema = mongoose.Schema(
         validate: [validator.isURL, "wrong url"],
       },
     ],
+    database: {
+      type: String,
+      required: [true, "please enter database name"],
+      trim: true,
+      lowercase: true,
+      unique: true,
+    },
     status: {
       type: String,
       default: "active",

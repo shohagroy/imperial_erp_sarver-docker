@@ -4,7 +4,7 @@ require("dotenv").config();
 
 const port = process.env.PORT || 8080;
 
-const db_uri = process.env.DB_URI || "mongodb://localhost:27017";
+const db_uri = process.env.DB_URI || "mongodb://localhost:27017/imperial_erp";
 
 // database connection
 mongoose.connect(db_uri).then(() => {

@@ -2,7 +2,7 @@ const services = require("../services/user.services");
 
 exports.getUsers = async (req, res, next) => {
   try {
-    const users = await services.getUsersService();
+    const users = await services.getUsersService(req.db);
 
     if (users.length) {
       return res.status(200).json({
@@ -23,7 +23,7 @@ exports.getUser = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const user = await services.getUserService(id);
+    const user = await services.getUserService(req.db, id);
 
     if (user._id) {
       return res.status(200).json({
@@ -42,7 +42,7 @@ exports.getUser = async (req, res, next) => {
 
 exports.postUser = async (req, res, next) => {
   try {
-    const user = await services.postUserService(req.body);
+    const user = await services.postUserService(req.db, req.body);
     await user.save({ validateBeforeSave: false });
     res.status(200).json({
       status: "success",
@@ -56,9 +56,16 @@ exports.postUser = async (req, res, next) => {
 
 exports.loginUser = async (req, res, next) => {
   try {
-    const loginResponse = await services.loginService(req.body);
+    const token = await services.loginService(req.body);
 
-    res.status(200).json(loginResponse);
+    res
+      .cookie("secret", token, {
+        expires: new Date(Date.now() + 30000),
+        httpOnly: true,
+        secure: true,
+      })
+      .status(200)
+      .json({ status: "success", massage: "user login successfully" });
   } catch (error) {
     next(error);
   }
@@ -66,7 +73,7 @@ exports.loginUser = async (req, res, next) => {
 
 exports.getMe = async (req, res) => {
   try {
-    const getMeResponse = await services.getMeService(req.user);
+    const getMeResponse = await services.getMeService(req.db, req.user);
 
     res.status(200).json(getMeResponse);
   } catch (error) {

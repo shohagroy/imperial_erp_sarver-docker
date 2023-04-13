@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { promisify } = require("util");
+const manageDatabase = require("./manageDatabase");
 /**
  * 1. check if token exists
  * 2. if not token send res
@@ -9,7 +10,12 @@ const { promisify } = require("util");
 
 module.exports = async (req, res, next) => {
   try {
-    const token = req.headers?.authorization?.split(" ")?.[1];
+    // const token = req.headers?.authorization?.split(" ")?.[1];
+    const { secret: token } = req.cookies;
+
+    console.log(req.cookies);
+
+    // console.log(token);
 
     if (!token) {
       return res.status(401).json({
@@ -17,17 +23,13 @@ module.exports = async (req, res, next) => {
         error: "You are not logged in",
       });
     }
-
     const decoded = await promisify(jwt.verify)(
       token,
       process.env.SECTECT_TOKEN_KEY
     );
 
-    // const user = User.findOne({ email: decoded.email });
-
     req.user = decoded;
-
-    next();
+    manageDatabase(decoded.database, req, next);
   } catch (error) {
     // console.log(error);
     res.status(403).json({

@@ -11,7 +11,6 @@ exports.getProductsService = async () => {
 exports.getProductService = async (_id) => {
   // const query = code.id === _id;
   const response = await Product.findById(_id).populate("stock");
-
   return response;
 };
 

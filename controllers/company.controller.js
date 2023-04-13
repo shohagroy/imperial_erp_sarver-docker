@@ -47,11 +47,21 @@ exports.getCompany = async (req, res, next) => {
 
 exports.postCompany = async (req, res, next) => {
   try {
-    const companys = await postCompanyService(req.body);
-    res.status(200).json({
-      status: "success",
-      massage: "new company create successfully",
-    });
+    const { company } = req.body;
+
+    const newCompany = await postCompanyService(company);
+
+    if (newCompany._id) {
+      res.status(200).json({
+        status: "success",
+        massage: "new company create successfully",
+      });
+    } else {
+      res.status(500).json({
+        status: "fail",
+        massage: "something want wrong!",
+      });
+    }
   } catch (error) {
     next(error);
   }

@@ -1,31 +1,44 @@
+const { default: mongoose } = require("mongoose");
 const Company = require("../models/Company");
-const User = require("../models/User");
+const userSchema = require("../models/User");
 const { generateToken } = require("../utils/generateToken");
 
-exports.getUsersService = async () => {
-  const response = await User.find({}).select("-password -userName");
+exports.getUsersService = async (db) => {
+  const response = await db.User.find({}).select("-password -userName");
   return response;
 };
 
-exports.getUserService = async (_id) => {
-  const response = await User.findById(_id);
+exports.getUserService = async (db, _id) => {
+  const response = await db.User.findById(_id);
   return response;
 };
 
-exports.postUserService = async (userData) => {
-  const response = await User.create(userData);
+exports.postUserService = async (db, userData) => {
+  const response = await db.User.create(userData);
   return response;
 };
 
 exports.loginService = async (loginInfo) => {
-  const { userName, password, companyId } = loginInfo;
+  const { userName, password, branchId } = loginInfo;
+
+  const company = await Company.findById(branchId);
+
+  if (!company) {
+    return {
+      status: "fail",
+      error: "company not valid",
+    };
+  }
+  const { database: db } = company;
+
+  const User = mongoose.model(`${db}_user`, userSchema);
 
   const user = await User.findOne({ userName });
 
   if (!user) {
     return {
       status: "fail",
-      error: "No user found. please contact admin",
+      massage: "No user found. please contact admin",
     };
   }
 
@@ -45,22 +58,14 @@ exports.loginService = async (loginInfo) => {
     };
   }
 
-  const token = generateToken(user, companyId);
-  const company = await Company.findById(companyId);
-  const { password: pwd, ...others } = user.toObject();
-
-  return {
-    status: "success",
-    user: others,
-    token,
-    company,
-  };
+  const token = generateToken(user, db);
+  return token;
 };
 
-exports.getMeService = async (userInfo) => {
-  const { id, companyId } = userInfo;
+exports.getMeService = async (db, userInfo) => {
+  const { id, database } = userInfo;
 
-  const user = await User.findById(id);
+  const user = await db.User.findById(id);
 
   if (!user) {
     return {
@@ -76,7 +81,7 @@ exports.getMeService = async (userInfo) => {
     };
   }
 
-  const company = await Company.findById(companyId);
+  const company = await Company.findOne({ database });
   const { password: pwd, ...others } = user.toObject();
 
   return {
