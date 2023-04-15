@@ -11,6 +11,13 @@ const categorySchema = mongoose.Schema(
       unique: [true, "category name must be unique"],
       lowercase: true,
     },
+    value: {
+      type: String,
+      required: [true, "please provide category value."],
+      trim: true,
+      unique: [true, "category value must be unique"],
+      lowercase: true,
+    },
     products: [
       {
         type: ObjectId,

@@ -56,16 +56,23 @@ exports.postUser = async (req, res, next) => {
 
 exports.loginUser = async (req, res, next) => {
   try {
-    const token = await services.loginService(req.body);
+    const response = await services.loginService(req.body);
 
     res
-      .cookie("secret", token, {
-        expires: new Date(Date.now() + 30000),
-        httpOnly: true,
-        secure: true,
-      })
+      // .cookie("secret", token, {
+      //   expires: new Date(Date.now() + 30000),
+      //   httpOnly: true,
+      //   secure: true,
+      // })
       .status(200)
-      .json({ status: "success", massage: "user login successfully" });
+      .json(response);
+    // res.cookie("secret", token, {
+    //   httpOnly: true,
+    //   sameSite: "None",
+    //   secure: true,
+    //   maxAge: 24 * 60 * 60 * 1000,
+    // });
+    // res.status(200).json({ status: "success" });
   } catch (error) {
     next(error);
   }

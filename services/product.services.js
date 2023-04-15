@@ -4,7 +4,8 @@ const Stock = require("../models/Stock");
 const Supplier = require("../models/Supplier");
 
 exports.getProductsService = async () => {
-  const response = await Product.find({}).select("code name _id");
+  const response = await Product.find({}).select("code name _id price");
+
   return response;
 };
 

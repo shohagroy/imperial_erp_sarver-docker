@@ -5,22 +5,30 @@ const { ObjectId } = mongoose.Schema.Types;
 // schema design
 const supplierSchema = mongoose.Schema(
   {
-    name: {
+    fullName: {
       type: String,
-      required: [true, "please provide staff full name."],
+      required: [true, "please provide supplier full name."],
       trim: true,
-      unique: [true, "your staff name must be unique"],
+      unique: [true, "your supplier name must be unique"],
+      lowercase: true,
+    },
+    sortName: {
+      type: String,
+      required: [true, "please provide supplier sort name."],
+      trim: true,
+      unique: [true, "your supplier sort name must be unique"],
       lowercase: true,
     },
     address: {
       type: String,
-      required: [true, "please provide your staff address"],
+      required: [true, "please provide your supplier address"],
       trim: true,
       lowercase: true,
     },
+    website: String,
     contact: {
       type: String,
-      required: [true, "Please provide  a emergency contact number"],
+      required: [true, "Please provide a contact number"],
       validate: {
         validator: (value) => {
           return validator.isMobilePhone(value);
@@ -28,39 +36,27 @@ const supplierSchema = mongoose.Schema(
         message: "Please provide a valid phone number",
       },
     },
-    email: {
-      type: String,
-      validate: [validator.isEmail, "Provide a valid Email"],
-      trim: true,
-      lowercase: true,
-      unique: true,
-    },
-    whatapp: {
-      type: String,
-      required: [true, "Please provide  a emergency contact number"],
-      validate: {
-        validator: (value) => {
-          return validator.isMobilePhone(value);
-        },
-        message: "Please provide a valid phone number",
-      },
-    },
+    email: String,
+    whatapp: String,
     type: {
       type: String,
       enum: ["local", "company", "international"],
       default: "company",
     },
-
     products: [
       {
         type: ObjectId,
         ref: "Product",
       },
     ],
-
-    currentAmount: {
-      type: Number,
-      default: 0,
+    ledger: {
+      type: ObjectId,
+      ref: "SupplierLedger",
+    },
+    type: {
+      type: String,
+      default: "company",
+      enum: ["company", "local"],
     },
     status: {
       type: String,

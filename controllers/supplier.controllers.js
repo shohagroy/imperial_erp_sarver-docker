@@ -57,3 +57,18 @@ exports.postSupplier = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.updateSupplier = async (req, res, next) => {
+  try {
+    const updateSupplier = await services.updateSupplierService(req.body);
+
+    res.status(200).json({
+      status: "success",
+      massage: "supplier update successfully",
+      data: updateSupplier,
+    });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};

@@ -18,7 +18,6 @@ const productSchema = mongoose.Schema(
       required: [true, "Please provide product name."],
       trim: true,
       unique: [true, "name must be unique"],
-      lowercase: true,
       minLength: [10, "Name must be at least 10 characters."],
       maxLenght: [50, "Name is too large"],
     },
@@ -30,7 +29,7 @@ const productSchema = mongoose.Schema(
         type: String,
         required: true,
       },
-      id: {
+      _id: {
         type: ObjectId,
         ref: "Category",
         required: true,
@@ -73,7 +72,7 @@ const productSchema = mongoose.Schema(
         trim: true,
         required: [true, "Please provide a supplier name"],
       },
-      id: {
+      _id: {
         type: ObjectId,
         ref: "Supplier",
         required: [true, "Please provide a stock id"],

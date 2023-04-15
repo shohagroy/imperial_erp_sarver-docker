@@ -5,9 +5,16 @@ const unitSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "please provide unit size name."],
+      required: [true, "please provide unit name."],
       trim: true,
-      unique: [true, "unit size name must be unique"],
+      unique: [true, "unit name must be unique"],
+      lowercase: true,
+    },
+    value: {
+      type: String,
+      required: [true, "please provide unit value name."],
+      trim: true,
+      unique: [true, "unit name must be unique"],
       lowercase: true,
     },
   },

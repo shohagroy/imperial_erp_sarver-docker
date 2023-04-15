@@ -12,5 +12,6 @@ exports.getCategoryService = async (_id) => {
 
 exports.postCategoryService = async (categoryData) => {
   const response = await Category.create(categoryData);
+
   return response;
 };

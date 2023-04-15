@@ -13,5 +13,6 @@ exports.getUnitSizeService = async (_id) => {
 
 exports.postUnitSizeService = async (unitSizeData) => {
   const response = await UnitSize.create(unitSizeData);
+
   return response;
 };

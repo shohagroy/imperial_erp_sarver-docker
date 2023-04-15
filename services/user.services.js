@@ -59,7 +59,16 @@ exports.loginService = async (loginInfo) => {
   }
 
   const token = generateToken(user, db);
-  return token;
+
+  const { password: pwd, ...others } = user.toObject();
+
+  return {
+    status: "success",
+    massage: "use successfully login!",
+    user: others,
+    token,
+    company,
+  };
 };
 
 exports.getMeService = async (db, userInfo) => {
